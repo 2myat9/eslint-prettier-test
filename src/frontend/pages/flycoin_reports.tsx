@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import {usePartners,} from "../common/queries"
-import {statuses} from '../common/utils';
-import FlycoinReport from "../components/flycoin_report";
-import {Card, Collapse, Container, Row, Spacer, Text} from "@nextui-org/react";
-import LoadingScreen from "../components/loading_screen";
+import React, { useState } from 'react';
+import { usePartners } from '../common/queries';
+import { statuses } from '../common/utils';
+import FlycoinReport from '../components/flycoin_report';
+import { Card, Collapse, Container, Row, Spacer, Text } from '@nextui-org/react';
+import LoadingScreen from '../components/loading_screen';
 
 // imports for date range filter
 import 'react-date-range/dist/styles.css';
@@ -11,7 +11,7 @@ import 'react-date-range/dist/theme/default.css';
 import { DateRangePicker } from 'react-date-range';
 
 const FlycoinReports = () => {
-    const {status: partnersStatus, data: partners} = usePartners()
+    const { status: partnersStatus, data: partners } = usePartners();
 
     // get today and tomorrow's date
     const today = new Date();
@@ -22,7 +22,7 @@ const FlycoinReports = () => {
     const [endDate, setEndDate] = useState(tomorrow);
 
     if (partnersStatus === statuses.loading) {
-        return <LoadingScreen/>
+        return <LoadingScreen />;
     }
 
     // define selection range for filter
@@ -30,22 +30,22 @@ const FlycoinReports = () => {
         startDate: startDate,
         endDate: endDate,
         key: 'selection',
-        showSelectionPreview: true,
-    }
+        showSelectionPreview: true
+    };
 
     // TODO: change type
     const handleSelect = (date: any) => {
         setStartDate(date.selection.startDate);
         setEndDate(date.selection.endDate);
-    }
+    };
 
     return (
         <>
             <Container md>
-                <Spacer y={3}/>
+                <Spacer y={3} />
                 <Card>
                     <Card.Header>
-                        <Row justify={"center"}>
+                        <Row justify={'center'}>
                             <Text h1>Flycoin Partner Reports</Text>
                         </Row>
                     </Card.Header>
@@ -61,17 +61,20 @@ const FlycoinReports = () => {
                             </Collapse>
                             {partners.map((partner: any) => (
                                 <Collapse key={partner.ID} title={partner.name}>
-                                    <FlycoinReport partner={partner} startDate={startDate} endDate={endDate}></FlycoinReport>
+                                    <FlycoinReport
+                                        partner={partner}
+                                        startDate={startDate}
+                                        endDate={endDate}
+                                    ></FlycoinReport>
                                 </Collapse>
                             ))}
                         </Collapse.Group>
                     </Card.Body>
                 </Card>
-                <Spacer y={4}/>
+                <Spacer y={4} />
             </Container>
-
         </>
-    )
-}
+    );
+};
 
 export default FlycoinReports;
