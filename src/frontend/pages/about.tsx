@@ -28,7 +28,7 @@ const Profile = () => {
                 <Card>
                     <Card.Header>
                         <Row justify={"center"}>
-                            <Text h1>About</Text>
+                            <Text h1>This is the new About page</Text>
                         </Row>
                     </Card.Header>
                     <Button.Group vertical light>
