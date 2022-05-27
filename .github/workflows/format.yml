@@ -24,10 +24,6 @@ jobs:
       - name: Run npm install
         run: npm install
 
-      # Run formatter
-      - name: Run Prettier formatter
-        run: npm run format
-
       # Run linter
-      - name: Run ESLint linter
-        run: npm run lint
+      - name: Run ESLint + Prettier
+        run: npm run lint:fix

@@ -15,7 +15,7 @@ const FlycoinReports = () => {
 
     // get today and tomorrow's date
     const today = new Date();
-    let tomorrow = new Date();
+    const tomorrow = new Date();
     tomorrow.setDate(today.getDate() + 1);
 
     const [startDate, setStartDate] = useState(today);
@@ -64,8 +64,7 @@ const FlycoinReports = () => {
                                     <FlycoinReport
                                         partner={partner}
                                         startDate={startDate}
-                                        endDate={endDate}
-                                    ></FlycoinReport>
+                                        endDate={endDate}></FlycoinReport>
                                 </Collapse>
                             ))}
                         </Collapse.Group>
