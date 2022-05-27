@@ -25,5 +25,5 @@ jobs:
         run: npm install
 
       # Run linter
-      - name: Run ESLint + Prettier
-        run: npm run lint:fix
+      - name: Run ESLint
+        run: npm run lint
