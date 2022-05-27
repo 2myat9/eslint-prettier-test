@@ -3,5 +3,5 @@ src/frontend/components/footer.tsx
 src/frontend/components/navbar_button.tsx
 
 src/frontend/pages/about.tsx
-src/frontend/pages/flycoin_reports.tsx
+# src/frontend/pages/flycoin_reports.tsx
 src/frontend/pages/signup.tsx
