@@ -26,4 +26,4 @@ jobs:
 
       # Run linter
       - name: Run ESLint + Prettier
-        run: npm run lint:fix
+        run: npm run lint
