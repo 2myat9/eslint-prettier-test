@@ -46,7 +46,7 @@ const FlycoinReports = () => {
                 <Card>
                     <Card.Header>
                         <Row justify={'center'}>
-                            <Text h1>Flycoin Partner Reports</Text>
+                              <Text h1>Flycoin Partner Reports</Text>
                         </Row>
                     </Card.Header>
                     <Card.Body>
